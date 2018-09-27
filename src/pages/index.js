@@ -1,13 +1,11 @@
 import React from "react"
 import { graphql, Link} from 'gatsby'
-import Header from '../components/Header'
+import Layout from '../components/Layout'
 
-
-const Layout = ({data}) => {
+const HomePage = ({data}) => {
   const { edges } = data.allMarkdownRemark
   return (
-    <div>
-      <Header />
+    <Layout>
       <div style={{
         display: 'flex',
         flexDirection: 'column',
@@ -24,12 +22,11 @@ const Layout = ({data}) => {
             </div>
           )
         })}
-
         <div>
           <Link to='/tags'>Browse by Tag</Link>
         </div>
       </div>
-    </div>
+    </Layout>
   )
 }
 
@@ -51,4 +48,4 @@ export const query = graphql`
   }
 `
 
-export default Layout
+export default HomePage

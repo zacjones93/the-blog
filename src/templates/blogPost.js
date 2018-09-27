@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
+import Layout from '../components/Layout'
 
 const Template = ({ data, pageContext }) => {
   const {next, prev} = pageContext
@@ -9,7 +10,7 @@ const Template = ({ data, pageContext }) => {
   const html = markdownRemark.html
 
   return (
-    <div>
+    <Layout>
       <h1 style={{fontFamily: 'avenir'}}>{title}</h1>
       <div className='blogpost'
         dangerouslySetInnerHTML={{__html: html}}
@@ -31,7 +32,7 @@ const Template = ({ data, pageContext }) => {
           </Link>
         }
       </div>
-    </div>
+    </Layout>
   )
 }
 
